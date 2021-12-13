@@ -66,7 +66,7 @@ def predict():
             )
         else:
             return render_template("index.html", status=status, ipk=ipk, pred="TEPAT")
-    return render_template("index.html")
+        return render_template("index.html")
     #     return render_template(
     #         "index.html",
     #         STATUS_KELULUSAN=output,
