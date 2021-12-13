@@ -45,18 +45,18 @@ def predict():
         else:
             status = 1
 
-        ip1 = request.form["ip1"]
-        ip2 = request.form["ip2"]
-        ip3 = request.form["ip3"]
-        ip4 = request.form["ip4"]
-        ip5 = request.form["ip5"]
-        ip6 = request.form["ip6"]
-        ip7 = request.form["ip7"]
-        ip8 = request.form["ip8"]
-        ipk = request.form["ipk"]
+        ip1 = float(request.form["ip1"])
+        ip2 = float(request.form["ip2"])
+        ip3 = float(request.form["ip3"])
+        ip4 = float(request.form["ip4"])
+        ip5 = float(request.form["ip5"])
+        ip6 = float(request.form["ip6"])
+        ip7 = float(request.form["ip7"])
+        ip8 = float(request.form["ip8"])
+        ipk = float(request.form["ipk"])
 
-        datas = np.array([[ip1, ip2, ip3, ip4, ip5, ip6, ip7, ip8, ipk]])
-        datas = datas.astype(np.float)
+        datas = np.array((ip1, ip2, ip3, ip4, ip5, ip6, ip7, ip8, ipk))
+        datas = np.reshape(datas, (1, -1))
 
         pred = model.predict(datas)
 
